@@ -50,15 +50,15 @@ class MainActivity : AppCompatActivity() {
 
 
 
-            tvResult.setText("Your bmi is "+bmi.round(2).toString())
-            tvResult2.setText("("+result+")")
+            //tvResult.setText("Your bmi is "+bmi.round(2).toString())
+            //tvResult2.setText("("+result+")")
 
             hideKeyboard()
 
             var intent = Intent(this@MainActivity,DetailActivity::class.java)
             intent.putExtra("bmiScore",bmi)
             intent.putExtra("result",result)
-            intent.putExtra("scoreheight",h)
+            intent.putExtra("scoreHeight",h)
             intent.putExtra("scoreWeight",w)
             startActivity(intent)
 
