@@ -2,6 +2,7 @@ package th.ac.su.apichat.app.bmime2
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -54,6 +55,12 @@ class MainActivity : AppCompatActivity() {
 
             hideKeyboard()
 
+            var intent = Intent(this@MainActivity,DetailActivity::class.java)
+            intent.putExtra("bmiScore",bmi)
+            intent.putExtra("result",result)
+            intent.putExtra("scoreheight",h)
+            intent.putExtra("scoreWeight",w)
+            startActivity(intent)
 
         }
     }
