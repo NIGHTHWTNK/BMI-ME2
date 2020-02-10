@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="24dp"
-    android:layout_marginRight="24dp">
+    >
 
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="x"
+        android:layout_alignParentRight="true"
+        android:id="@+id/btnexit"
+        android:background="#ffffff"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        />
     <TextView
+        android:id="@+id/topic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="YOUR BMI"
         android:layout_gravity="center"
         android:textSize="24sp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
         />
     <TextView
         android:id="@+id/tvResult"
@@ -21,6 +32,8 @@
         android:layout_gravity="center"
         android:textSize="24sp"
         android:layout_marginBottom="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/topic"
         />
 
     <TextView
@@ -28,7 +41,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="..."/>
+        android:text="..."
+        android:layout_below="@+id/tvResult"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/tvResult3"
@@ -36,7 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="..."
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="24dp"
+        android:layout_below="@+id/tvResult2"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/btnShare"
@@ -45,5 +62,8 @@
         android:background="@drawable/button1"
         android:text="share"
         android:textColor="#ffffff"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_below="@+id/tvResult3"
         />
-</LinearLayout>
+</RelativeLayout>

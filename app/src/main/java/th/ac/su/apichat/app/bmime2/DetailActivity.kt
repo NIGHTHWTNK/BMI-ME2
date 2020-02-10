@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_detail.*
-import java.time.Instant
 
 class DetailActivity : AppCompatActivity() {
 
@@ -31,21 +29,30 @@ class DetailActivity : AppCompatActivity() {
         detail.setText(" height " + getheight +" weight "+getweight)
 
         var btnShare = findViewById<Button>(R.id.btnShare)
-        btnShare.setOnClickListener{
 
-            var value = "Your BMI"+bmiScore +"\n"+"result"+ result
+        btnShare.setOnClickListener {
+            var value = "My BMI is "+score.round(2) +"("+result+")"
 
             var intent = Intent();
             intent.action = Intent.ACTION_SEND
             intent.putExtra(Intent.EXTRA_TEXT,value)
             intent.type = "text/plan"
 
+            startActivity(Intent.createChooser(intent,"Share"))
+
+            startActivity(intent)
+
+        }
+
+        var btnback = findViewById<Button>(R.id.btnexit)
+        btnback.setOnClickListener {
+            finish()
+
         }
     }
-}
-
     fun Double.round(decimals: Int): Double {
         var multiplier = 1.0
         repeat(decimals) { multiplier *= 10 }
         return kotlin.math.round(this * multiplier) / multiplier
     }
+}
